@@ -13,6 +13,66 @@ processor.retreiveAllData("fiCdtTrf",dataJSON,"|");
 System.out.println(processor.getBuilder());
 ```
 
+<details><summary>Hasil</summary>
+
+```
+fiCdtTrf
+|==Credit Transfer Transaction Information
+|====Instruction For Next Agent
+|======Instruction Information : /REC/PLS DEBIT OUR AC.79827131`2 WITH
+|======Instruction Information :  ORFAS BANK
+|====Instruction For Creditor Agent
+|======Instruction Information : 12345678B2
+|====Debtor
+|======Financial Institution Identification
+|========BICFI : ASPXIDJAXXX
+|====Instructing Agent
+|======Financial Institution Identification
+|========BICFI : MUABIDJAXXX
+|====Instructed Agent
+|======Financial Institution Identification
+|========BICFI : MUABIDJAXXX
+|====Creditor Agent
+|======Financial Institution Identification
+|========BICFI : PNBPUS33NYC
+|====Intermediary Agent 1
+|======Financial Institution Identification
+|========BICFI : PNBPUS3NNYC
+|====Payment Identification
+|======UETR : 671b60fa-a8a3-4603-afc3-2e5f0b8152ab
+|======Instruction Identification : F5S1905987123493
+|======End To End Identification : RELATED123REFF
+|====Interbank Settlement Date
+|======hour : -2147483648
+|======month : 2
+|======year : 2025
+|======timezone : -2147483648
+|======day : 18
+|======minute : -2147483648
+|======second : -2147483648
+|====Interbank Settlement Amount
+|======Currency : JPY
+|======value : 4000
+|==Group Header
+|====Number Of Transactions : 1
+|====Message Identification : F5S1905987123493
+|====Settlement Information
+|======Instructing Reimbursement Agent
+|========Financial Institution Identification
+|==========BICFI : IRVTUS3N
+|======Settlement Method : COVE
+|====Creation Date Time
+|======hour : 0
+|======month : 12
+|======year : 2021
+|======timezone : 0
+|======day : 31
+|======minute : 0
+|======second : 0
+```
+
+</details> 
+
 ### Deep Element
 
 Seperator menggunakan `#` untuk mengambil element dalam
@@ -24,3 +84,46 @@ processor.setSep("==");
 processor.retreiveAllData("fiCdtTrf#cdtTrfTxInf",dataJSON,"|");
 System.out.println(processor.getBuilder());`
 ```
+
+<details><summary>Hasil</summary>
+
+```
+Credit Transfer Transaction Information
+|==Instruction For Next Agent
+|====Instruction Information : /REC/PLS DEBIT OUR AC.79827131`2 WITH
+|====Instruction Information :  ORFAS BANK
+|==Instruction For Creditor Agent
+|====Instruction Information : 12345678B2
+|==Debtor
+|====Financial Institution Identification
+|======BICFI : ASPXIDJAXXX
+|==Instructing Agent
+|====Financial Institution Identification
+|======BICFI : MUABIDJAXXX
+|==Instructed Agent
+|====Financial Institution Identification
+|======BICFI : MUABIDJAXXX
+|==Creditor Agent
+|====Financial Institution Identification
+|======BICFI : PNBPUS33NYC
+|==Intermediary Agent 1
+|====Financial Institution Identification
+|======BICFI : PNBPUS3NNYC
+|==Payment Identification
+|====UETR : 671b60fa-a8a3-4603-afc3-2e5f0b8152ab
+|====Instruction Identification : F5S1905987123493
+|====End To End Identification : RELATED123REFF
+|==Interbank Settlement Date
+|====hour : -2147483648
+|====month : 2
+|====year : 2025
+|====timezone : -2147483648
+|====day : 18
+|====minute : -2147483648
+|====second : -2147483648
+|==Interbank Settlement Amount
+|====Currency : JPY
+|====value : 4000
+```
+
+</details> 
